@@ -25,7 +25,7 @@ jobs:
           
           header: '{"kid":"did:web:or13.github.io:signor#0","alg":"ES256"}'
           payload: ${{ github.sha }}
-          jwk: ${{ secets.DID_WEB_PRIVATE_KEY_JWK }}
+          jwk: ${{ secrets.DID_WEB_PRIVATE_KEY_JWK }}
 
       - run: |
           SIGNATURE=`echo "${{ steps.sign_jws.outputs.jws }}"`
