@@ -23,14 +23,15 @@ jobs:
           resource: "jws"
           action: "sign"
           
-          header: '{"kid":"did:example123#0","alg":"ES256"}'
+          header: '{"kid":"did:web:or13.github.io:signor#0","alg":"ES256"}'
           payload: ${{ github.sha }}
-          jwk: '{"kty":"EC","crv":"P-256","alg":"ES256","d":"SoJ4K2QzbSkJkSWEW-e7I11kn4mT5xUVvIq5rDqqUWU","x":"SaGJIWK7l4PE9z97fY0_J5fX8Y971xtfrQDhnkAYERQ","y":"HkEanI5mtHyEYLkEiYXwcRuxviTS5e3rgi0kAzJZWkU"}'
+          jwk: ${{ secets.DID_WEB_PRIVATE_KEY_JWK }}
 
       - run: |
           SIGNATURE=`echo "${{ steps.sign_jws.outputs.jws }}"`
           UPDATED=`jq ".signor.jose.signature=\"$SIGNATURE\"" package.json`
           echo "$UPDATED" > package.json
+
       - run: |
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
