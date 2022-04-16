@@ -15,12 +15,23 @@ jobs:
           node-version: 16
       - run: npm install
       - run: npm test
+
+      - name: Sign
+        id: sign_jws
+        uses: or13/jose-actions@v0.0.5
+        with:
+          resource: "jws"
+          action: "sign"
+          
+          header: '{"kid":"did:example123#0","alg":"ES256"}'
+          payload: ${{ github.sha }}
+          jwk: '{"kty":"EC","crv":"P-256","alg":"ES256","d":"SoJ4K2QzbSkJkSWEW-e7I11kn4mT5xUVvIq5rDqqUWU","x":"SaGJIWK7l4PE9z97fY0_J5fX8Y971xtfrQDhnkAYERQ","y":"HkEanI5mtHyEYLkEiYXwcRuxviTS5e3rgi0kAzJZWkU"}'
+
       - run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
-          HEAD=`git rev-parse --short HEAD`
-          UPDATED=`jq ".signor.head=\"$HEAD\"" package.json`
+          SIGNATURE=`echo "${{ steps.sign_jws.outputs.jws }}"`
+          UPDATED=`jq ".signor.jose.signature=\"$SIGNATURE\"" package.json`
           echo "$UPDATED" > package.json
+
       - uses: stefanzweifel/git-auto-commit-action@v4
       - run: npm version patch
       - uses: JS-DevTools/npm-publish@v1
