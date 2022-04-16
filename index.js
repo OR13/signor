@@ -1,1 +1,1 @@
-module.exports = require('./didDocument.json')
+module.exports = require('./did.json')

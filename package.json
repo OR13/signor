@@ -27,7 +27,6 @@
     "jest": "^27.5.1"
   },
   "signor": {
-    "head": "74fc34a",
     "jose": {
       "signature": "eyJraWQiOiJkaWQ6ZXhhbXBsZTEyMyMwIiwiYWxnIjoiRVMyNTYifQ.ZjcxN2E3ZWI2ZTA4OGZjYTdkOTZkMzFkMmVjZmFhMmFhMGQyOTBmMw.NvB1hpzyBRF45BGPDPQUFAqZJXIVAwGYbuK0s5UitTkKsxZiQSt-hxMgH3qwpuU4y2weJE9_f4a67e8Ob5QEVA"
     }

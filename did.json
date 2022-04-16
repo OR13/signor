@@ -1,0 +1,35 @@
+{
+    "@context": [
+      "https://www.w3.org/ns/did/v1",
+      "https://w3id.org/security/suites/jws-2020/v1"
+    ],
+    "id": "did:web:or13.github.io:signor",
+    "verificationMethod": [
+      {
+        "id": "did:web:or13.github.io:signor#0",
+        "type": "JsonWebKey2020",
+        "controller": "did:web:or13.github.io:signor",
+        "publicKeyJwk": {
+          "kty": "EC",
+          "crv": "P-256",
+          "x": "7NRs-BK1UUWMdhXAQD9DPB8e3l2HVq2bZ5phLuTUjYE",
+          "y": "pzT0kAZwwBWjHy08eSOuqfGFDUF3IgWBy4s3MQE20Q4"
+        }
+      }
+    ],
+    "assertionMethod": [
+      "did:web:or13.github.io:signor#0"
+    ],
+    "authentication": [
+      "did:web:or13.github.io:signor#0"
+    ],
+    "capabilityInvocation": [
+      "did:web:or13.github.io:signor#0"
+    ],
+    "capabilityDelegation": [
+      "did:web:or13.github.io:signor#0"
+    ],
+    "keyAgreement": [
+      "did:web:or13.github.io:signor#0"
+    ]
+  }

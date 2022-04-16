@@ -11,6 +11,8 @@ npm t
 
 ### Check signature
 
-```
-npx verify-npm-signature @or13/signor@1.0.0
+```bash
+CURRENT_VERSION="@or13/signor@`jq -r .version package.json`"
+echo "🔎  $CURRENT_VERSION - Checking package signature..."
+npx verify-npm-signature $CURRENT_VERSION
 ```
