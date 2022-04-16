@@ -13,7 +13,9 @@ jobs:
         with:
           node-version: 16
 
-      # This is dumb, but its to show that verify is possible
+      # This is a dumb thing to verify... 
+      # we should be verifying something signed on the client...
+      # not the thing we signed last in ci.
       - name: Get Signature from Package
         id: get_package_signature
         run: |

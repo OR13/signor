@@ -24,7 +24,7 @@ jobs:
           action: "sign"
           
           header: '{"kid":"did:web:or13.github.io:signor#0","alg":"ES256"}'
-          # This is a super dumb thing to sign.. becuase the commit is changed on line 40...
+          # This is a super dumb thing to sign... because the commit is changed on line 40...
           # In order to "verify" we would need to look at: git log -n 1 --skip 1 --pretty=format:"%H"
           payload: ${{ github.sha }}
           jwk: ${{ secrets.DID_WEB_PRIVATE_KEY_JWK }}
