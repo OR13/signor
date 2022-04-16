@@ -16,6 +16,8 @@ jobs:
       - run: npm install
       - run: npm test
       - run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
           HEAD=`git rev-parse --short HEAD`
           UPDATED=`jq ".signor.head=\"$HEAD\"" package.json`
           echo "$UPDATED" > package.json
