@@ -31,7 +31,9 @@ jobs:
           SIGNATURE=`echo "${{ steps.sign_jws.outputs.jws }}"`
           UPDATED=`jq ".signor.jose.signature=\"$SIGNATURE\"" package.json`
           echo "$UPDATED" > package.json
-
+      - run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
       - uses: stefanzweifel/git-auto-commit-action@v4
       - run: npm version patch
       - uses: JS-DevTools/npm-publish@v1
