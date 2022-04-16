@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # This is dumb, but its to show that verify is possible
+      - name: Get Signature from Package
+        id: get_package_signature
+        run: |
+          content=`jq -r .signor.jose.signature package.json`
+          echo "::set-output name=signature::$content"
+
+      - name: Verify
+        id: verify_jws
+        uses: or13/jose-actions@v0.0.7
+        with:
+          resource: "jws"
+          action: "verify"
+          
+          jws: ${{steps.get_package_signature.outputs.signature}}
+          jwk: ${{ secrets.DID_WEB_PRIVATE_KEY_JWK }}
+      
+      - name: View JWS Verification
+        run: |
+          echo "${{ steps.verify_jws.outputs.verified_payload }}"
+          echo "${{ steps.verify_jws.outputs.verified_protectedHeader }}"
+
+      - run: npm install
+      - run: npm test
