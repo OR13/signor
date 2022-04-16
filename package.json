@@ -5,7 +5,7 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "didDocument.json"
+    "did.json"
   ],
   "publishConfig": {
     "access": "public"
