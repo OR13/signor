@@ -1,4 +1,3 @@
-
 {
   "name": "@or13/signor",
   "version": "1.0.1",
@@ -28,6 +27,6 @@
     "jest": "^27.5.1"
   },
   "signor": {
-    "head": "5ab47ae"
+    "head": "6efaa70"
   }
 }
