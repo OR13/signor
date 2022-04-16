@@ -3,7 +3,10 @@
   "version": "1.0.1",
   "description": "A GitHub, NPM, DID Experiment",
   "main": "index.js",
-  "files": ["index.js", "didDocument.json"],
+  "files": [
+    "index.js",
+    "didDocument.json"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -22,5 +25,8 @@
   "homepage": "https://github.com/OR13/signor#readme",
   "devDependencies": {
     "jest": "^27.5.1"
+  },
+  "signor": {
+    "head": "5ab47ae"
   }
 }

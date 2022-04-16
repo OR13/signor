@@ -16,7 +16,9 @@ jobs:
       - run: npm install
       - run: npm test
       - run: |
-          cat ./package.json | jq --arg foo bar '. + { foo: $foo }' > package.json
+          HEAD=`git rev-parse --short HEAD`
+          UPDATED=`jq ".signor.head=\"$HEAD\"" package.json`
+          echo "$UPDATED" > package.json
       - uses: stefanzweifel/git-auto-commit-action@v4
       - run: npm version patch
       - uses: JS-DevTools/npm-publish@v1
