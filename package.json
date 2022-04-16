@@ -4,6 +4,9 @@
   "description": "A GitHub, NPM, DID Experiment",
   "main": "index.js",
   "files": ["index.js", "didDocument.json"],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "jest"
   },
