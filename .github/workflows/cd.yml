@@ -15,10 +15,8 @@ jobs:
           node-version: 16
       - run: npm install
       - run: npm test
-      - run: |-
-        cat ./package.json | jq --arg foo bar '. + { foo: $foo }'
-      - run: |-
-        npm version patch
+      - run: cat ./package.json | jq --arg foo bar '. + { foo: $foo }'
+      - run: npm version patch
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
