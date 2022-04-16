@@ -1,0 +1,20 @@
+[
+    {
+      "id": "did:key:zDnaegNT8gHZ9ck56BUUuATyiFBQQPFUNFEexw1cXhiu3BfSG#zDnaegNT8gHZ9ck56BUUuATyiFBQQPFUNFEexw1cXhiu3BfSG",
+      "type": "JsonWebKey2020",
+      "controller": "did:key:zDnaegNT8gHZ9ck56BUUuATyiFBQQPFUNFEexw1cXhiu3BfSG",
+      "publicKeyJwk": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "7NRs-BK1UUWMdhXAQD9DPB8e3l2HVq2bZ5phLuTUjYE",
+        "y": "pzT0kAZwwBWjHy08eSOuqfGFDUF3IgWBy4s3MQE20Q4"
+      },
+      "privateKeyJwk": {
+        "kty": "EC",
+        "crv": "P-256",
+        "d": "DwXDCQbtI5Z7sR887Nq8Y8JRpn9qvqh_j3x2NooLz-I",
+        "x": "7NRs-BK1UUWMdhXAQD9DPB8e3l2HVq2bZ5phLuTUjYE",
+        "y": "pzT0kAZwwBWjHy08eSOuqfGFDUF3IgWBy4s3MQE20Q4"
+      }
+    }
+  ]
