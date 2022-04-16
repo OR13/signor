@@ -18,8 +18,8 @@ jobs:
       - name: Get Signature from Package
         id: get_package_signature
         run: |
-        content=`jq -r .signor.jose.signature package.json`
-        echo "::set-output name=signature::$content"
+          content=`jq -r .signor.jose.signature package.json`
+          echo "::set-output name=signature::$content"
 
       - name: Verify
         id: verify_jws
