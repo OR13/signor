@@ -15,11 +15,11 @@ jobs:
           node-version: 16
       - run: npm install
       - run: npm test
-      - run: "cat ./package.json | jq --arg foo bar '. + { foo: $foo }'"
-      - name: Setup git profile
-        run: |
-          git config user.name "GitHub"
-      - run: git add . && git commit -m 'updating package json'
+      - run: |
+          cat ./package.json | jq --arg foo bar '. + { foo: $foo }' > package.json
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Automated Change
       - run: npm version patch
       - uses: JS-DevTools/npm-publish@v1
         with:
