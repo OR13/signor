@@ -5,7 +5,7 @@
 A GitHub, NPM, DID Experiment
 
 ```
-
+https://api.did.actor/api/identifiers/did:web:or13.github.io:signor
 ```
 
 ```
