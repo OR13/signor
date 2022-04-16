@@ -16,6 +16,9 @@ jobs:
       - run: npm install
       - run: npm test
       - run: "cat ./package.json | jq --arg foo bar '. + { foo: $foo }'"
+      - name: Setup git profile
+        run: |
+          git config user.name "GitHub"
       - run: git add . && git commit -m 'updating package json'
       - run: npm version patch
       - uses: JS-DevTools/npm-publish@v1
